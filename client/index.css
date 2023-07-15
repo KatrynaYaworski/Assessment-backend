@@ -1,0 +1,25 @@
+#quote-input{
+    width: 165px;
+}
+body{
+    background-color: black;
+    color: white;
+}
+
+li{
+    color: white;
+    list-style: none
+}
+
+
+
+.quote-and-button-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.delete-btn{
+    background-color: transparent;
+    margin-right: 7px;
+}
