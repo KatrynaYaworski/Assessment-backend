@@ -8,7 +8,7 @@ body{
     background-image: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1380&t=st=1689394443~exp=1689395043~hmac=10486bc4a4315557ba65f932f01e564bffe6ccf0179ce6d368ed8639fe46da73');
     background-repeat: no-repeat;
     background-size: cover;
-    color: rgb(10, 10, 81);
+    color: rgb(77, 77, 97);
 }
 main{
     display: flex;
@@ -53,7 +53,23 @@ span{
     flex-direction: row;
     
 }
+li{
+    margin-left: 8px;
+}
 
-.fa-trash-xmark{
- margin-right: 7px;
+
+
+button{
+    border: none;
+    background-color: rgb(47, 47, 107);
+    opacity: .9;
+    color: white;
+    border-radius: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: white;
+    color: darkblue;
 }
