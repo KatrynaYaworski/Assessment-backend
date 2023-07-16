@@ -8,13 +8,28 @@ body{
     background-image: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1380&t=st=1689394443~exp=1689395043~hmac=10486bc4a4315557ba65f932f01e564bffe6ccf0179ce6d368ed8639fe46da73');
     background-repeat: no-repeat;
     background-size: cover;
-    color: white;
+    color: rgb(10, 10, 81);
+}
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 40vh;
 }
 nav{
+    display: flex;
     background-color: white;
     opacity: .5;
     font-size: 25px;
+    justify-content: center;
 
+}
+ol{
+    display: flex;
+    width: 30%;
+    padding: 0;
+    justify-content: space-around;
 }
 li{
     color: rgb(10, 10, 81);
