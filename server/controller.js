@@ -11,7 +11,64 @@ let motivationDB = [
   },
 ];
 
+let mCurrentId = 3;
 let currentId = 3;
+
+let todoDatabase = [
+  {
+      id: 1,
+      action: 'Make your bed.',
+      isCompleted: false,
+  },
+  {
+      id: 2,
+      action: 'Brush your teeth',
+      isCompleted: false,
+  }
+]
+
+const getList = (req, res) => {
+  res.status(200).send(todoDatabase)
+}
+
+
+const addAction = (req, res) => {
+  newItem = {
+      id: currentId,
+      action: req.body.action,
+      isCompleted: false
+  }
+  if (todoDatabase.length < 21) {
+      todoDatabase.push(newItem)
+      currentId++
+      res.status(200).send(todoDatabase)
+  } else {
+      res.status(500).send(todoDatabase)
+  }
+}
+
+
+const toggleCompleteAction = (req, res) => {
+  todoDatabase.forEach(element => {
+      if (+req.params.id === element.id) {
+          element.isCompleted = !element.isCompleted
+      }
+  })
+  res.status(200).send(todoDatabase)
+}
+
+const deleteAction = (req, res) => {
+  if (req.query.id) {
+      todoDatabase.forEach((element, i) => {
+          if (+req.query.id === element.id) {
+              todoDatabase.splice(i, 1)
+          }
+      })
+  } else {
+      todoDatabase = []
+  }
+  res.status(200).send(todoDatabase)
+}
 
 module.exports = {
   getCompliment: (req, res) => {
@@ -65,12 +122,12 @@ module.exports = {
 
   addMotivationQuote: (req, res) => {
     newQuote = {
-      id: currentId,
+      id: mCurrentId,
       quote: req.body.quote,
       likes: 0,
     };
     motivationDB.push(newQuote);
-    currentId++;
+    mCurrentId++;
     res.status(200).send(motivationDB);
   },
 
@@ -83,10 +140,7 @@ module.exports = {
     res.status(200).send(motivationDB);
   },
 
-  //add likes and dislikes button
-  //set event listener when clicked it increments or decrements.
-  //use params type
-  //Pass in string of corresponding type for each like and dislike button function param.
+
 
   handleReaction: (req, res) => {
     const { type, id } = req.params;
@@ -101,4 +155,5 @@ module.exports = {
     });
     res.status(200).send(motivationDB);
   },
+  getList, addAction, toggleCompleteAction, deleteAction
 };

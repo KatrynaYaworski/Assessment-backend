@@ -1,0 +1,44 @@
+#quote-input{
+    width: 165px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=1380&t=st=1689394443~exp=1689395043~hmac=10486bc4a4315557ba65f932f01e564bffe6ccf0179ce6d368ed8639fe46da73');
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+nav{
+    background-color: white;
+    opacity: .5;
+    font-size: 25px;
+
+}
+li{
+    color: rgb(10, 10, 81);
+    list-style: none
+}
+button{
+    max-width: fit-content;
+}
+
+.fa-thumbs-down{
+    margin-left: 8px;
+
+}
+span{
+    margin: 0 5px;
+}
+
+
+.quote-and-button-container{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.fa-trash-xmark{
+ margin-right: 7px;
+}
